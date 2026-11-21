@@ -199,9 +199,9 @@ def factory_icon(d, x, y, s):
 
 
 def cricket_icon(d, x, y, s):
-    """A century: '100' over a tilted bat and ball."""
+    """Rahul's 136: the final score over a tilted bat and ball."""
     f = font(SERIF_B, int(s * 0.46))
-    d.text((x + s * 0.20, y - s * 0.40), "100", font=f, fill=RED)
+    d.text((x + s * 0.20, y - s * 0.40), "136", font=f, fill=RED)
     a = math.radians(-35)
 
     def rot(px, py):
@@ -259,10 +259,10 @@ def main():
     tw = W - M - tx
     y = story(d, tx, top + 2, tw, "TOP STORY · MIDDLE EAST",
               "HOUTHI MISSILES DOWNED OVER RIYADH",
-              "Saudi-led coalition intercepts 3 ballistic missiles fired at the capital",
+              "Saudi-led coalition intercepts 3 ballistic missiles fired at the capital; a Houthi drone downed hours later",
               58, 4, 23, bottom - 56)
     fx = font(SANS_B, 20)
-    extra = wrap(d, "Third night of alerts, days after a strike hit the PIF Tower", fx, tw)
+    extra = wrap(d, "Second strike on the capital in days, after the PIF Tower was hit on Thursday", fx, tw)
     d.line((tx, y + 6, tx + 60, y + 6), fill=RED, width=3)
     block(d, tx, y + 14, extra, fx, INK, 1.1)
     d.line((M, bottom + 12, W - M, bottom + 12), fill=INK, width=2)
@@ -273,10 +273,10 @@ def main():
     ry = bottom + 24
     row_end = ry + 224
     cells = [
-        (cop_icon, "CLIMATE · TÜRKIYE", "COP31 TALKS RUN INTO OVERTIME",
-         "Summit spills into Saturday; draft deal drops fossil fuels"),
-        (quake_icon, "AMERICAS · PERU", "M6.7 QUAKE JOLTS PERU",
-         "Central Peru, 108 km deep; felt in Lima, no deaths reported"),
+        (cop_icon, "CLIMATE · TÜRKIYE", "COP31 TALKS MISS DEADLINE, NO DEAL",
+         "Third draft due Saturday; COP32 goes to Addis Ababa in 2027"),
+        (quake_icon, "AMERICAS · PERU", "M6.7 QUAKE HURTS 8 IN JUNÍN",
+         "128 homes hit, 4 destroyed; felt in Lima, no deaths"),
     ]
     for i, (icon, tag, head, deck) in enumerate(cells):
         cx = M + i * (cw2 + g)
@@ -291,8 +291,8 @@ def main():
     wide = [
         (factory_icon, "ASIA · NORTH KOREA", "KIM TOURS FACTORY, NO TRUMP MEETING",
          "KCNA shows school-equipment factory tour after Trump left Asia"),
-        (cricket_icon, "SPORT · CRICKET · NZ", "RAHUL HUNDRED IN WELLINGTON",
-         "KL Rahul century as India chase New Zealand's 368 on day 3"),
+        (cricket_icon, "SPORT · CRICKET · NZ", "RAHUL 136 PUTS INDIA ON TOP",
+         "First Indian opener with tons in every SENA land; Gill falls two short"),
     ]
     for i, (icon, tag, head, deck) in enumerate(wide):
         cx = M + i * (cw2 + g)
